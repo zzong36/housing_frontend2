@@ -1,0 +1,69 @@
+.logo-container {
+  display: inline-block;
+  animation: fadeIn 0.8s ease;
+  margin-bottom: 2rem;
+}
+
+/* 로고 전체 정렬용 */
+.logo-wrapper {
+  position: relative;
+}
+
+/* 🔥 블루 그라디언트 원형 로고 */
+.logo-circle {
+  width: 112px;   /* 28 x 4px(Tailwind 변환) */
+  height: 112px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #375BB9, #649EEB, #99C6EE);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 22px rgba(55, 91, 185, 0.45);
+}
+
+/* 아이콘 */
+.logo-icon {
+  width: 56px;   /* w-14 */
+  height: 56px;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.45));
+}
+
+/* 장식 원 2개 */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.92;
+  animation: pulseDot 1.8s infinite ease-in-out alternate;
+}
+
+/* dot #1 */
+.dot-1 {
+  top: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #99C6EE, #78B4E7);
+}
+
+/* dot #2 */
+.dot-2 {
+  bottom: -6px;
+  left: -6px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #375BB9, #5688D8);
+  animation-delay: 0.4s;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseDot {
+  from { transform: scale(0.9); opacity: 0.85; }
+  to   { transform: scale(1.1); opacity: 1; }
+}
