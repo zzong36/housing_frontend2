@@ -199,7 +199,7 @@ const COLUMN_LABELS = {
 } as const;
 
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'http://54.180.106.181:9000';
 
 export function ChatArea({ currentChatId, theme, language }: ChatAreaProps) {
   const texts = getTexts(language);
