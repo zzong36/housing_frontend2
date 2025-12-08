@@ -400,7 +400,6 @@ const translatedHeaders =
       }
 
       // 🔥 추천 모드일 때 DF → 카드용 propertyData 변환
-      // 🔥 추천 모드일 때 DF → 카드용 propertyData 변환
       let propertyData: Property[] | undefined = undefined;
       if (mode === 'recommend' && tableDataRaw && Array.isArray(tableDataRaw.rows)) {
         propertyData = tableDataRaw.rows.map((row: any, index: number) => {
@@ -431,8 +430,8 @@ const translatedHeaders =
           const location = locationPieces.join(' ');
 
           const priceParts: string[] = [];
-          if (rtfe != null) priceParts.push(`월세 ${rtfe}만원`);
-          if (grfe != null) priceParts.push(`보증금 ${grfe}만원`);
+          if (rtfe != null) priceParts.push(`rent ${rtfe * 10000} won`);
+          if (grfe != null) priceParts.push(`deposit ${grfe * 10000} won`);
 
           // 🔥 로컬 아파트 이미지 중 하나 선택 (index 기반으로 섞기)
           const fallbackImage = shuffledImages[index % shuffledImages.length];
@@ -446,7 +445,7 @@ const translatedHeaders =
             area: rent_area != null ? `${rent_area}㎡` : '',
             rooms: 0,
             bathrooms: 0,
-            type: '추천 매물',
+            type: 'recommended',
             imageUrl: fallbackImage, // ⬅️ 여기!
             nearestStoreName: nearest_store_name ?? undefined,
             nearestSubway: nearest_subway_station ?? undefined,

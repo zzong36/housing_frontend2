@@ -2,6 +2,8 @@ import { Home } from 'lucide-react';
 // Update the path below to the actual mascot image location in your project
 import mascotImage from '../assets/mascot.png';
 import '../utils/style.css';
+import homebridgeLogo from '../assets/homebridge_logo.png';
+import Logo from "../components/Logo";
 
 
 interface LandingPageProps {
@@ -29,17 +31,10 @@ export function LandingPage({ onLanguageSelect }: LandingPageProps) {
 
       <div className="text-center px-6 relative z-10">
         {/* 로고 */}
-{/* 로고 */}
-<div className="logo-container">
-  <div className="logo-wrapper">
-    <div className="logo-circle">
-      <Home className="logo-icon" strokeWidth={2.5} />
+{/* 로고 이미지 */}
+    <div>
+      <Logo src={homebridgeLogo} size={160} />
     </div>
-
-    <div className="dot dot-1"></div>
-    <div className="dot dot-2"></div>
-  </div>
-</div>
 
 
 
